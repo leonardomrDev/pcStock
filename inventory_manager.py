@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import * 
 
 # App Window -----------------------------------------------
 app = Tk()
@@ -41,7 +41,9 @@ scrollbar.configure(command=item_list.yview)
 """
 
 #------------------------------------------------------------------------------
-Button(app, text="Add").grid(row=6, column=0, padx=20)
+Button(app, text="Add", font=("bold", 12)).grid(row=10, column=0, sticky=W, padx=20)
+Button(app, text="Edit", font=("bold", 12)).grid(row=10, column=2, sticky=W, padx=20)
+Button(app, text="Delete", font=("bold", 12)).grid(row=10, column=4, sticky=W, padx=20)
 #------------------------------------------------------------------------------
 
 # Command to Run the App -------------------
