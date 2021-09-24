@@ -13,9 +13,16 @@ class Database:
 
     def add(self, nomeProduto, nomeMarca, valorProduto):
         self.cursor.execute("INSERT INTO produtos VALUES (NULL, ?, ?, ?)", (nomeProduto, nomeMarca, valorProduto))
-        self.cursor.
-    def edit():
-        print("a")
+        self.cursor.commit()
 
-    def remove():
-        print("a")
+    def edit(self, id, nomeProduto, nomeMarca, valorProduto):
+        self.cursor.execute("UPDATE produtos SET nomeProduto = ?, nomeMarca = ?, valorProduto = ? WHERE id = ?",
+        (nomeProduto, nomeMarca, valorProduto, id))
+        self.connect.commit()
+
+    def remove(self, id):
+        self.cursor.execute("DELETE FROM produtos WHERE ID = ?", (id,))
+        self.connect.commit()
+    
+    def __delattr__(self, name: str) -> None:
+        self.connect.close()
