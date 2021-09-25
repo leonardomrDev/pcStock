@@ -78,9 +78,12 @@ item_list.bind('<<ListboxSelect>>', select)
 # Scrollbar for the List of Items in Inventory----
 scrollbar = Scrollbar(app).grid(row=3, column=3)
 #-----------------------------------------------------------------------------------------------------------------
-Button(app, text="Add", width= 12, command=add, font=("bold", 12)).grid(row=10, column=0, sticky=W, padx=20)
-Button(app, text="Edit", width= 12, command=edit, font=("bold", 12)).grid(row=10, column=1, sticky=W, padx=20)
-Button(app, text="Delete", width= 12, command=remove, font=("bold", 12)).grid(row=10, column=2, sticky=W, padx=20)
+addb = PhotoImage(file = 'addbutton.png')
+Button(app, image=addb, border=0, command=add, font=("bold", 12)).grid(row=10, column=0, sticky=W, padx=20)
+editb = PhotoImage(file = 'editbutton.png')
+Button(app, image=editb, border=0, command=edit, font=("bold", 12)).grid(row=10, column=2, sticky=W, padx=20)
+removeb = PhotoImage(file = 'removebutton.png')
+Button(app, image=removeb, border=0, command=remove, font=("bold", 12)).grid(row=10, column=1, sticky=W, padx=20)
 #------------------------------------------------------------------------------------------------------------------
 
 migrate()
